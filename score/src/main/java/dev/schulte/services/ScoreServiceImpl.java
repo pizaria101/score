@@ -19,7 +19,17 @@ public class ScoreServiceImpl implements ScoreService{
     }
 
     @Override
+
     public Score createScore(Score score) {
         return this.scoreRepo.save(score);
+
+    public boolean deleteScoreById(int id) {
+        if(this.scoreRepo.existsById(id)){
+            this.scoreRepo.deleteById(id);
+            return true;
+        }else{
+            return false;
+        }
+
     }
 }
