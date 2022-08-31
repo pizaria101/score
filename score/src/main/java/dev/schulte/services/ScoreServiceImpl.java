@@ -17,4 +17,14 @@ public class ScoreServiceImpl implements ScoreService{
     public List<Score> getAllScores() {
         return this.scoreRepo.findAll();
     }
+
+    @Override
+    public boolean deleteScoreById(int id) {
+        if(this.scoreRepo.existsById(id)){
+            this.scoreRepo.deleteById(id);
+            return true;
+        }else{
+            return false;
+        }
+    }
 }
