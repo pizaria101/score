@@ -7,4 +7,6 @@ import java.util.List;
 public interface ScoreService {
 
     List<Score> getAllScores();
+
+    Score createScore(Score score);
 }

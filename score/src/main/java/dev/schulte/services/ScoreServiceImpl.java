@@ -17,4 +17,9 @@ public class ScoreServiceImpl implements ScoreService{
     public List<Score> getAllScores() {
         return this.scoreRepo.findAll();
     }
+
+    @Override
+    public Score createScore(Score score) {
+        return this.scoreRepo.save(score);
+    }
 }
